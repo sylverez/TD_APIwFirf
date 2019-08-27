@@ -37,6 +37,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
+
+
 def warn(*args, **kwargs): pass
 import warnings
 warnings.warn = warn
@@ -142,4 +144,9 @@ predictions_SVM = SVM.predict(Test_X_Tfidf)
 # Use accuracy_score function to get the accuracy
 print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, Test_Y)*100)
 
+#PERSISTENCE TIME
 
+
+import pickle
+
+pickle.dump(SVM, open('model.pkl','wb'))
